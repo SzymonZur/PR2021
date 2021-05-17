@@ -1,0 +1,102 @@
+<style>
+    .questionLabel{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        list-style: none;
+    }
+
+    li{
+        display: flex;
+        flex-direction: row;
+        margin-right: 5px;
+        width: 100%;
+    }
+
+    a{
+        width: 300px;
+        height: auto;
+    }
+
+
+    
+</style>
+
+<div class="container p-4">
+<h1 class="mt-4">Create Survey</h1>
+<p class="lead mb-3"><%= user %> will now create new poll</p>
+
+<%- include('partials/messages'); %>
+<form action="/surveys/createSurvey" method="POST">
+    <div class="form-group">
+      <label for="topic">Topic</label>
+      <input
+        type="text"
+        id="topic"
+        name="topic"
+        class="form-control"
+        placeholder="Enter Topic for Poll"
+      />
+    </div>
+    <div class="form-group mt-2">
+      <label for="description">Description</label>
+      <textarea
+        type="text"
+        id="description"
+        name="description"
+        class="form-control"
+        placeholder="Enter description for poll"
+      ></textarea>
+    </div>
+
+
+    <div class="form-group mt-2 ">
+        <label for="questions" >Questions</label>
+        <ul class="questionLabel"></ul>
+    </div>
+    <a class="addBtn btn btn-primary btn-block">Add question</a>
+    <div class="d-grid gap-2 mt-3">
+      <button type="submit" class="btn btn-primary btn-block">Create Survey</button>
+    </div>
+  </form>
+  <div class="mt-3">
+    <a href="/dashboard" class="btn btn-secondary">Back</a>
+    </div>
+</div>
+
+
+  <script>
+      const addBtn = document.querySelector(".addBtn");
+      const questionLabel = document.querySelector('.questionLabel')
+
+      const newQuestion = () => {
+          const newLi = document.createElement('li');
+          const newInput = document.createElement('input');
+          const delBtn = document.createElement('a');
+
+          newInput.classList.add("form-control")
+          newLi.classList.add("mt-3")
+          newInput.setAttribute('placeholder', "Enter Question")
+          newInput.setAttribute('name', "question")
+
+          delBtn.classList.add("deleteBtn")
+          delBtn.classList.add("btn")
+          delBtn.classList.add("btn-danger")
+          delBtn.innerText = "Delete Question"
+
+          newLi.append(newInput);
+          newLi.append(delBtn)
+          questionLabel.append(newLi)
+            
+      }
+
+    const deleteQuestion = (e) => {
+    if(e.target.closest("a")){
+            e.target.closest("li").remove();
+        }   
+    }  
+
+    addBtn.addEventListener('click', newQuestion);
+    questionLabel.addEventListener('click', deleteQuestion)
+      
+  </script>

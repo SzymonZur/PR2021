@@ -1,3 +1,19 @@
-<h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">Welcome <%= user.name %></p>
-<a href="/users/logout" class="btn btn-secondary">Logout</a>
+
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body ">
+        <div class="px-4">
+          <%- include('partials/messages'); %>
+            <h1 class="mt-4">Dashboard</h1>
+            <p class="lead mb-3">Welcome <%= user %></p>
+                <div class="row">
+                <a href="/surveys/createSurvey" class="btn btn-secondary mb-3">Create Survey</a>
+                <a href="" class="btn btn-secondary mb-3">Invates for Polls</a>
+                <a href="" class="btn btn-secondary mb-3">Your Polls</a>
+                <a href="" class="btn btn-secondary mb-3">Check Your Answers</a>
+                <a href="/users/logout" class="btn btn-secondary">Logout</a>    
+            </div>
+        </div>    
+      </div>
+    </div>
+  </div>
