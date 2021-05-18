@@ -13,11 +13,9 @@ const SurveySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Questions: {
-        name: {
-            type: Array,
-            required: true
-        },
+    Questions: {  
+        type: Array,
+        required: true
     },
 });
 

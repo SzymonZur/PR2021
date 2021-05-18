@@ -34,9 +34,7 @@ router.post('/createSurvey', (req,res) =>{
             creator: userId,
             topic,
             description,
-            Questions: {
-                name: question
-            }
+            Questions: question
         });
 
         newSurvey.save()
