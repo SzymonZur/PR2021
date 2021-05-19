@@ -1,3 +1,21 @@
 <h1 class="mt-4">Your Polls</h1>
 <p class="lead mb-3">Welcome <%= user %></p>
 <a href="/dashboard" class="btn btn-secondary">Back</a>
+
+<div class="container">
+    <div class="row">
+    <div class="col-lg-4">
+            <p>
+              <div class="caption mb-2">Your Polls</div>
+                  <ul>
+                     <% polls.forEach(function(polls) { %>
+                        <p>Topic: <%= polls.topic %></p>
+                        <p>Description: <%= polls.description %></p>
+                     <% }); %>
+                  </ul>
+            </p>
+        </div>
+    </div>
+  </div>
+
+</html>
