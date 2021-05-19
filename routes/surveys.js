@@ -15,7 +15,7 @@ router.post('/createSurvey', (req,res) =>{
     const { topic, description, question} = req.body;
     let errors = [];
 
-    userName = req.user;
+    user = req.user.name;
     userId = req.user.id;
     
     if(!topic || !description || !question) {
@@ -25,7 +25,7 @@ router.post('/createSurvey', (req,res) =>{
     if(errors.length > 0 ) {
         res.render('createSurvey', {
             errors,
-            userName,
+            user,
             topic,
             description
         })
