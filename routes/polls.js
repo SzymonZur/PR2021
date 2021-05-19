@@ -11,14 +11,22 @@ router.get('/yourPolls', ensureAuthenticated ,(req, res) => {
     })
     const userId = req.user.id;
 
-    /// PO WIELU PROBACH SIE UDALO - bardzo wazne
+    
+    /// Stara wersja, zła - z promises nie wyciągniemy łatwo zmiennej
 
-    Survey.find({ "creator" : userId})
-        .then(survey => {
-            survey.forEach(element => {
-                console.log(element.topic);
-            });
+    // Survey.find({ "creator" : userId})
+    //     .then(survey => {
+    //         survey.forEach(element => {
+    //             console.log(element.topic);
+    //         });
+    //     })
+    
+    /// PO WIELU PROBACH SIE UDALO - bardzo wazne
+    Survey.find({ 'creator': userId }, function (err, docs) {
+        docs.forEach(element => {
+            console.log(element.topic);
         })
+      });
 
 })
 
