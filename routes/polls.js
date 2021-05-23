@@ -8,4 +8,8 @@ router.get('/yourPolls', ensureAuthenticated, function(req, res) {
     polls.list(req,res);
 });
 
+router.get('/:id', ensureAuthenticated, function(req, res){
+    polls.users(req,res);
+});
+
 module.exports = router;
