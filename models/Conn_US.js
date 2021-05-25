@@ -11,7 +11,8 @@ const ConnUsSchema = new mongoose.Schema({
     },
     answer: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     },
 });
 

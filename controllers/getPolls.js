@@ -1,6 +1,7 @@
 const Polls = require('../models/Survey');
 const Users = require('../models/User');
 
+
 exports.list = function (req, res) {
         const userId = req.user.id
         Polls.find({"creator" : userId }).exec(function (err, polls) {
@@ -20,9 +21,10 @@ exports.users = function (req, res) {
                         return res.send(500,err);
                 }
                 res.render("userInvates", {
-                        id: req.params.currentPoll,
+                        id: req.body.currentPoll,
                         user: req.user.name,
-                        allUsers: users
+                        allUsers: users,
+                        pollId: req.params.id
                 });
         });
 };

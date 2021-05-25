@@ -1,21 +1,21 @@
 <h1 class="mt-4">Your Polls</h1>
 <p class="lead mb-3"><%= user %></p>
 
-
 <div class="container">
     <div class="row">
         <div class="col-lg-4">
             <div class="caption mb-2">Invates Users for Poll</div>
-            
             <div class="list-group">
               <% allUsers.forEach(function(users) { %>
                 <% if(users.name == user){} %> 
+                 <form method='post', action='./addTo/<%= pollId%>'>
                 <button class="list-group-item list-group-item-action" name="currentUser" value="<%= users.id %>" aria-current="true">
                   <%= users.name %>
                 </button>
+              </form>
               <% }); %>
             </div>
         </div>
     </div>
   </div>
-  <a href="./yourPolls" class="btn btn-secondary mt-2">Back</a>
+  <a href="/polls/yourPolls" class="btn btn-secondary mt-2">Back</a>
