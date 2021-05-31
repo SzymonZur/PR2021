@@ -13,6 +13,11 @@
                   <%= users.name %>
                 </button>
               </form>
+              <form method='post', action='./addTo/<%= pollId%>'>
+                <button class="btn btn-outline-danger" name="currentUser" value="<%= users.id %>" aria-current="true">
+                  Delete invate
+                </button>
+              </form>
               <% }); %>
             </div>
         </div>
