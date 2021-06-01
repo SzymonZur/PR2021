@@ -9,16 +9,20 @@ router.get('/yourPolls', ensureAuthenticated, function(req, res) {
     polls.list(req,res);
 });
 
-router.get('/yourPolls/:id', ensureAuthenticated, function(req, res){
+router.get('/yourPolls/:id', ensureAuthenticated ,(req, res) => 
+    res.render('yourpolls/managePolls', {
+        id: req.params.id
+    }));
+
+router.get('/yourPolls/:id/invate', ensureAuthenticated, function(req, res){
     polls.users(req,res);
 });
 
-
 router.post('/yourPolls/addTo/:id', (req, res) => {
-    const userId = req.body.currentUser
-    let pollId = req.params.id
-    console.log(`ID usera: ${userId}`);
-    console.log(`ID ankiety: ${pollId}`);
+    // const userId = req.body.currentUser
+    // let pollId = req.params.id
+    // console.log(`ID usera: ${userId}`);
+    // console.log(`ID ankiety: ${pollId}`);
 
     const newConn = new Conn({
         u_id: req.body.currentUser,
@@ -33,11 +37,9 @@ router.post('/yourPolls/addTo/:id', (req, res) => {
         .catch(err => console.log(err));
 })
 
-router.post('/yourPolls/delete/:id', (req, res) => {
-    const userId = req.body.currentUser
-    let pollId = req.params.id
-    console.log(`ID usera: ${userId}`);
-    console.log(`ID ankiety: ${pollId}`);
-})
+router.get('/yourPolls/:id/invatedUsers', ensureAuthenticated, function(req, res){
+    polls.invated(req,res);
+});
+
 
 module.exports = router;
