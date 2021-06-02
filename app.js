@@ -58,6 +58,7 @@ app.use('/', require('./routes/index'))
 app.use('/users', require('./routes/users'))
 app.use('/surveys', require('./routes/surveys'))
 app.use('/polls', require('./routes/polls'))
+app.use('/answerPoll', require('./routes/answerPoll'))
 
 const PORT = process.env.PORT || 5003; 
 

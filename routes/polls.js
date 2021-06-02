@@ -31,8 +31,8 @@ router.post('/yourPolls/addTo/:id', (req, res) => {
 
     newConn.save()
         .then(Conn => {
-            req.flash('success_msg', 'You are created new Conn');
-            res.redirect('/dashboard');
+            req.flash('success_msg', 'You invated new user');
+            res.redirect('back');
         })
         .catch(err => console.log(err));
 })

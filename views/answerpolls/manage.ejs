@@ -1,0 +1,21 @@
+<h1 class="mt-4">Your Polls</h1>
+<p class="lead mb-3">Welcome <%= user %></p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="caption mb-2">Choose Poll to answer</div>
+            <div class="list-group">
+              <% polls.forEach(function(polls) { %>
+                <form method='get', action='./manage/<%= polls.id %>'>
+                <button class="list-group-item list-group-item-action" aria-current="true">
+                  <%= polls.topic %>
+                </button>
+              </form>
+              <% }); %>
+            </div>
+        </div>
+    </div>
+  </div>
+  <a href="/dashboard" class="btn btn-secondary mt-2">Back</a>

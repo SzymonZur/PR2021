@@ -5,10 +5,11 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="caption mb-2">Invates Users for Poll</div>
+            <%- include('../partials/messages'); %>
             <div class="list-group">
               <% allUsers.forEach(function(users) { %>
                 <% if(users.name == user){} %> 
-                 <form method='post', action='./addTo/<%= pollId%>'>
+                 <form method='post', action='../addTo/<%= pollId%>'>
                 <button class="list-group-item list-group-item-action" name="currentUser" value="<%= users.id %>" aria-current="true">
                   <%= users.name %>
                 </button>

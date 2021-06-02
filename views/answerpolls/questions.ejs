@@ -1,0 +1,23 @@
+<h1 class="mt-4">Your Polls</h1>
+<p class="lead mb-3">Welcome <%= user %></p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="caption mb-2">QUESTIONS</div>
+            <form action="/answerPoll/saveAnswer/<%= id %>" method="POST">
+            <div class="list-group">
+              <% polls.forEach(function(quest) { %>
+                <% for (var i = 0; i < quest.Questions.length ; i++) { %>
+                  <h5 class="mt-2"> <%= i+1 %>. <%= quest.Questions[i] %></h5>
+                  <input type="text" name="answer">
+                  <% } %>
+              <% }); %>
+              <button type="submit" class="btn btn-primary btn-block mt-3">Save Answers</button>
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>
+  <a href="../manage" class="btn btn-secondary mt-2">Back</a>

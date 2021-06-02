@@ -38,7 +38,7 @@ exports.users = function (req, res) {
                         })
                 }
         })
-};
+}; 
 
 exports.invated = function (req, res) {
         Conn.find({ s_id: req.params.id }).exec(function (err, polls) {
