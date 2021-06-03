@@ -1,0 +1,15 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="caption mb-2">Your answers</div>
+            <div class="list-group">
+                <% for (var i = 0; i < answers.length ; i++) { %>
+                  <h4 class="mt-2"> <%= i+1 %>. <%= polls[i] %></h4>
+                  <span><%= i+1 %>. <%= answers[i] %></span>
+                  <% } %>
+            </div>
+        </div>
+    </div>
+  </div>
+  <a href="/dashboard" class="btn btn-secondary mt-2">Back</a>
