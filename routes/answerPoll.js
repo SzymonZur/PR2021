@@ -37,21 +37,18 @@ router.post('/saveAnswer/:id', (req,res) =>{
                 q_id: pollId,
                 Hash: hash
             });
-            console.log(NewAnswer);
             NewAnswer.save()
+
+            Conn.findOneAndUpdate({u_id: userId, s_id: pollId}, {$set:{answer:true}}, {new: true, useFindAndModify: false}, (err, doc) => {
+                if (err) {
+                    console.log("Something wrong when updating data!");
+                }
+            })
+            .then(Conn => {
+                req.flash('success_msg', `You are answered for poll. Save that key in your computer to future check for your answers: ${hash}`);
+                res.redirect('/dashboard');
+            })
         }))
-
-        Conn.findOneAndUpdate({u_id: userId, s_id: pollId}, {$set:{answer:true}}, {new: true}, (err, doc) => {
-            if (err) {
-                console.log("Something wrong when updating data!");
-            }
-            console.log(doc);
-        })
-        .then(Conn => {
-            req.flash('success_msg', 'You are answered for poll. Thank You');
-            res.redirect('/dashboard');
-        })
-
 })
 
 module.exports = router;
