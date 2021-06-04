@@ -52,7 +52,10 @@ router.post('/verifyHash', (req,res) =>{
                     });   
                 }
             }
-        )}
+        )}else{
+            req.flash('error_msg', 'Your hash is incorrect or someone changed your data');
+            res.redirect('back');
+        }
     }});
 })
 
