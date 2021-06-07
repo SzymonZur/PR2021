@@ -41,5 +41,8 @@ router.get('/yourPolls/:id/invatedUsers', ensureAuthenticated, function(req, res
     polls.invated(req,res);
 });
 
+router.get('/yourPolls/:id/answers', ensureAuthenticated, function(req, res){
+    polls.answers(req,res);
+});
 
 module.exports = router;

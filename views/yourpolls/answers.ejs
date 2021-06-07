@@ -1,0 +1,16 @@
+
+<table>
+    <tr>
+    <% questions.forEach(function(question) { %>        
+       <td> <%= question %></td>
+    <% }) %>
+    </tr>
+    <% for (let m = 0; m < answers.length ; m++) { %>
+    <tr>
+        <% for (let n = 0; n < answers[0].length ; n++) { %>
+       <td><%= answers[m][n]%></td>
+        <% } %>
+    </tr>
+    <% } %> 
+ </table>
+ <a href="../../yourPolls/<%= pollId %>" class="btn btn-secondary">Back</a>

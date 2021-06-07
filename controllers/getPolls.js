@@ -1,6 +1,8 @@
 const Polls = require('../models/Survey');
 const Users = require('../models/User');
 const Conn = require('../models/Conn_US');
+const Answers = require('../models/Answers');
+const Survey = require('../models/Survey');
 
 
 exports.list = function (req, res) {
@@ -63,3 +65,36 @@ exports.invated = function (req, res) {
                 }
         })
 };
+
+exports.answers = function (req, res) {
+                Survey.find({ _id: req.params.id}).exec(function (err, polls){
+                        if(err){
+                                return res.send(500,err)
+                        }else{
+                        let items = []
+                        polls.forEach(element => {
+                            element.Questions.forEach(element => {
+                                items.push(element)
+                            });
+                            console.log(items);
+                            Answers.find({ q_id: req.params.id}).exec(function (err, answers){
+                                if(err){
+                                        return res.send(500,err)
+                                }else{
+                                        let answersItems = []
+                                        answers.forEach(element => {
+                                                answersItems.push(element.Answers)
+                                        });  
+                                        console.log(answersItems);
+
+                                        res.render("yourpolls/answers", {
+                                                id: req.body.currentPoll,
+                                                user: req.user.name,
+                                                questions: items,
+                                                answers: answersItems,
+                                                pollId: req.params.id
+                                        })
+                                }})            
+                        })
+                }})
+        };
