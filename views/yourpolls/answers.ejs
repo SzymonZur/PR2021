@@ -1,16 +1,19 @@
 
 <table>
-    <tr>
+    <tr >
     <% questions.forEach(function(question) { %>        
-       <td> <%= question %></td>
+       <td class="p-2 border border-secondary"> <%= question %></td>
     <% }) %>
     </tr>
-    <% for (let m = 0; m < answers.length ; m++) { %>
+    
+    <h4 class="p-2" style ="margin: 50px 0 20px 0;">Lista odpowiedzi:</h4>
+        <% for (let m = 0; m < answers.length ; m++) { %>         
     <tr>
-        <% for (let n = 0; n < answers[0].length ; n++) { %>
-       <td><%= answers[m][n]%></td>
+        
+            <% for (let n = 0; n < answers[0].length ; n++) { %>
+            <td class="p-2 border border-primary"><%= answers[m][n]%></td>
         <% } %>
     </tr>
     <% } %> 
  </table>
- <a href="../../yourPolls/<%= pollId %>" class="btn btn-secondary">Back</a>
+ <a href="../../yourPolls/<%= pollId %>" class="btn btn-secondary" style = "margin-top: 30px;">Back</a>
