@@ -89,4 +89,3 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
     $ node app.js
 
-![alt text](https://ibb.co/KctKtQV)
