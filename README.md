@@ -5,8 +5,11 @@ Aplikacja do przeprowadzania anonimowych ankiet przez użytkowników serwisu.
 ## Spis treści
 
 - [Opis](#opis)
-  - [Za pomocą](#za-pomocą)
-- [Author](#author)
+  - [Built with](#build-with)
+- [Requirements](#requirements)
+  - [Node](#node)
+- [Install](#install)
+- [Running the project ](#running-the-project)
 
 ## Opis
 
@@ -18,7 +21,7 @@ System zrealizowany w formie aplikacji webowej powinien uwzględniać możliwoś
 * reprezentacja umożliwia sprawdzenie czy dana osoba przekazała dane,
 * reprezentacja umożliwia sprawdzenie przez użytkownika czy jego dane są zapisane w bazie.
 
-### Za pomocą
+### Build with
 
 - HTML (ejs)
 - CSS custom properties
@@ -30,13 +33,6 @@ System zrealizowany w formie aplikacji webowej powinien uwzględniać możliwoś
     * passport
     * express
 - MongoDB
-
-## Uruchamianie
-
-Aby uruchomić aplikacje należy:
-- Pobrać pliki
-- Zainstalować paczki dzięki npm 
-- Dodać do folderu "config" plik o nazwie "keys.js" w który w środku będzie klucz do swojej bazy z MongoDB
 
 ---
 ## Requirements
@@ -82,7 +78,10 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 ## Install
 
     $ git clone https://github.com/SzymonZur/PR2021
-    $ cd PROJECT_TITLE
+    $ cd PR2021
+    
+    After that you need to create file "keys.js" in your config folder.
+    Add your key for MongoDB database to keys.js.
 
 
 ## Running the project
