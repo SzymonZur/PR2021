@@ -7,7 +7,7 @@ const Answers = require('../models/Answers');
 const Poll = require('../models/Survey');
 
 router.get('/insertHash', ensureAuthenticated, function(req, res) {
-    res.render('checkHash/insertHash')
+    res.render('checkhash/insertHash')
 });
 
 router.post('/verifyHash', (req,res) =>{ 
