@@ -76,7 +76,6 @@ exports.answers = function (req, res) {
                             element.Questions.forEach(element => {
                                 items.push(element)
                             });
-                            console.log(items);
                             Answers.find({ q_id: req.params.id}).exec(function (err, answers){
                                 if(err){
                                         return res.send(500,err)
@@ -84,9 +83,7 @@ exports.answers = function (req, res) {
                                         let answersItems = []
                                         answers.forEach(element => {
                                                 answersItems.push(element.Answers)
-                                        });  
-                                        console.log(answersItems);
-
+                                        }); 
                                         res.render("yourpolls/answers", {
                                                 id: req.body.currentPoll,
                                                 user: req.user.name,

@@ -2,18 +2,6 @@
 
 App for conducting anonymous surveys
 
-## Table of Contents
-
-- [Description](#description)
-  - [Built with](#build-with)
-- [Requirements](#requirements)
-  - [Node](#node)
-- [Install](#install)
-- [Running the project ](#running-the-project)
-- [Documentation ](#documentation)
-- [Authors ](#authors)
-
-
 ## Description
 
 Design and implementation of a web system enabling voting (or polls) in a way that allows users to remain anonymous. The system implemented in the form of a web application should include the possibility of voting or expressing an opinion in such a way as to perform the following functions:
@@ -89,9 +77,6 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 ## Running the project
 
     $ node app.js
-
-## Documentation
-
 
 ## Authors
 
