@@ -97,4 +97,4 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 ## Authors
 
 - Szymon Żur - Linkedin - [@szymonżur](https://www.linkedin.com/in/szymon%C5%BCur/)
-- Maksymilian Świętoń
+- Maksymilian Świętoń - Linkedin - [@maksymilianświętoń](https://www.linkedin.com/in/maksymilian-%C5%9Bwi%C4%99to%C5%84-57153220b/)
