@@ -1,6 +1,6 @@
 # Poll App with NodeJS/MongoDB
 
-Aplikacja do przeprowadzania anonimowych ankiet przez użytkowników serwisu.
+App for conducting anonymous surveys
 
 ## Spis treści
 
@@ -10,16 +10,16 @@ Aplikacja do przeprowadzania anonimowych ankiet przez użytkowników serwisu.
   - [Node](#node)
 - [Install](#install)
 - [Running the project ](#running-the-project)
+- [Authors ](#authors)
 
 ## Opis
 
-Projekt i implemetacja systemu webowego umożliwiającego głosowanie (lub ankietowanie)
-w sposób umożliwiający zachowanie anonimowości użytkowników.
-System zrealizowany w formie aplikacji webowej powinien uwzględniać możliwość oddania głosu lub wyrażenia opinii w taki sposób, aby realizować następujące funkcje:
-* informacje przechowywane w bazie danych,
-* reprezentacja nie umożliwia powiązania użytkownika z konkretnymi danymi,
-* reprezentacja umożliwia sprawdzenie czy dana osoba przekazała dane,
-* reprezentacja umożliwia sprawdzenie przez użytkownika czy jego dane są zapisane w bazie.
+Design and implementation of a web system enabling voting (or polls) in a way that allows users to remain anonymous. The system implemented in the form of a web application should include the possibility of voting or expressing an opinion in such a way as to perform the following functions:
+
+* information stored in the database,
+* representation does not allow the user to be associated with specific data,
+* representation allows you to check whether a given person has provided data,
+* representation enables the user to check whether his data is saved in the database.
 
 ### Build with
 
@@ -88,3 +88,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
     $ node app.js
 
+## Authors
+
+- Szymon Żur - Linkedin - [@szymonżur](https://www.linkedin.com/in/szymon%C5%BCur/)
+- Maksymilian Świętoń
