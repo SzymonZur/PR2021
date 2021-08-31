@@ -1,19 +1,72 @@
+<style>
+  .welcome{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
 
-<div class="row mt-5">
-    <div class="col-md-6 m-auto">
-      <div class="card card-body ">
-        <div class="px-4">
+  .welcome__image{
+    height: 100%;
+    width: 65%;
+    background-image: url("../2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .welcome__image--blur{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 101, 212, 0.603);
+  }
+
+  .welcome__login{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a{
+    width: 300px;
+  }
+
+  @media (max-width: 1024px) {
+    .welcome__image{
+    width: 50%;
+    background-position:right;
+  }
+  .welcome__login{
+    width: 50%;
+    
+    }
+  }
+
+  @media (max-width: 650px) {
+    .welcome__image{
+    width: 0%;
+    background-image: none;
+  }
+  .welcome__login{
+    width: 100%;
+    }
+  }
+</style>
+
+<div class="welcome">
+  <div class="welcome__image">
+    <div class="welcome__image--blur"></div>
+  </div>
+  <div class="welcome__login">
           <%- include('partials/messages'); %>
             <h1 class="mt-4">Dashboard</h1>
             <p class="lead mb-3">Welcome <%= user %></p>
-                <div class="row">
-                <a href="/surveys/createSurvey" class="btn btn-secondary mb-3">Create Survey</a>
-                <a href="/answerPoll/manage" class="btn btn-secondary mb-3">Invitations to surveys</a>
-                <a href="/polls/yourPolls" class="btn btn-secondary mb-3">Your Surveys</a>
-                <a href="/checkHash/insertHash" class="btn btn-secondary mb-3">Check Your Answers</a>
-                <a href="/users/logout" class="btn btn-secondary">Logout</a>    
-            </div>
+                <a href="/surveys/createSurvey" class="btn btn-primary mb-3">Create Survey</a>
+                <a href="/answerPoll/manage" class="btn btn-primary mb-3">Invitations to surveys</a>
+                <a href="/polls/yourPolls" class="btn btn-primary mb-3">Your Surveys</a>
+                <a href="/checkHash/insertHash" class="btn btn-primary mb-3">Check Your Answers</a>
+                <a href="/users/logout" class="btn btn-primary">Logout</a>    
         </div>    
       </div>
-    </div>
-  </div>
+ 

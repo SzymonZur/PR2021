@@ -1,7 +1,66 @@
-<div class="row mt-5">
-    <div class="col-md-6 m-auto">
-      <div class="card card-body">
-        <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
+<style>
+  .welcome{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .welcome__image{
+    height: 100%;
+    width: 65%;
+    background-image: url("../2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .welcome__image--blur{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 101, 212, 0.603);
+  }
+
+  .welcome__login{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button{
+    width: 300px;
+  }
+
+  @media (max-width: 1024px) {
+    .welcome__image{
+    width: 50%;
+    background-position:right;
+  }
+  .welcome__login{
+    width: 50%;
+    
+    }
+  }
+
+  @media (max-width: 650px) {
+    .welcome__image{
+    width: 0%;
+    background-image: none;
+  }
+  .welcome__login{
+    width: 100%;
+    }
+  }
+</style>
+
+
+<div class="welcome">
+  <div class="welcome__image">
+    <div class="welcome__image--blur"></div>
+  </div>
+  <div class="welcome__login">
+        <h1 class="text-center me-4 mb-2"><i class="fas fa-sign-in-alt"></i>  Login</h1>
         <%- include('partials/messages'); %>
         <form action="/users/login" method="POST">
           <div class="form-group">
@@ -24,13 +83,12 @@
               placeholder="Enter Password"
             />
           </div>
-          <div class="d-grid gap-2 mt-3">
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
-          </div>
+          
+            <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
+        
         </form>
-        <p class="lead mt-4">
+        <p class="lead mt-3">
           No Account? <a href="/users/register">Register</a>
         </p>
       </div>
     </div>
-  </div>

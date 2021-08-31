@@ -24,6 +24,7 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true})
 // EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
+app.use(express.static('public'))
 
 // Bodyparser
 
