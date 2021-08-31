@@ -2,6 +2,8 @@
 
 App for conducting anonymous surveys
 
+![](./Screenshot1.png)
+
 ## Table of Contents
 
 - [Description](#description)
